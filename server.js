@@ -16,7 +16,7 @@ app.post("/", function(req, res) {
     var result = weight/((height/100)**2);
     css = "<style>body {width: 500px;border: 15px solid green;padding: 50px;margin: 20px;border-radius: 25px;}</style>";
     html = "<div> <img src='https://media.giphy.com/media/kgsBIWtPd5Q5Pw11Rq/giphy.gif' alt='globe' width='250'/></div>";
-    if (weight || height) {
+    if (weight && height) {
         res.send(css + "Your BMI is " + Math.round((result + Number.EPSILON) * 10) / 10 + html);
     } else {
         res.send(css + "Nothing here!" + html)
