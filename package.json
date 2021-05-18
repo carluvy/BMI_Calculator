@@ -1,0 +1,27 @@
+{
+  "name": "bmi_calculator",
+  "version": "1.0.0",
+  "description": "BMI calculator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carluvy/BMI_Calculator.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "Carla Aluvai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carluvy/BMI_Calculator/issues"
+  },
+  "homepage": "https://github.com/carluvy/BMI_Calculator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

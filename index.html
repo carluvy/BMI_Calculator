@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator</title>
+
+    <style>
+        body {
+            width: 500px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+            border-radius: 25px;
+            }
+            
+            .tab {
+                overflow: hidden;
+                border: 1px solid yellowgreen;
+                background-color: goldenrod;
+                }
+                
+                .tab button {
+                    background-color: inherit;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 14px 16px;
+                    transition: 0.3s;
+                    font-size: 17px;
+                    }
+                    
+                    .tab button:hover {
+                        background-color: #ddd;
+                        }
+                        
+                        .tab button.active {
+                            background-color: #ccc;
+                            }
+                            
+                            .tabcontent {
+                                display: none;
+                                padding: 6px 12px;
+                                border: 1px solid #ccc;
+                                border-top: none;
+                                }
+                                
+                                button {
+                                    border-radius: 5px;
+                                    background-color: beige;
+                                    }
+                                    input {
+                                        background-color:currentColor;
+                                        }
+</style>
+
+<script>
+function selectSystem(evt, systemName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    }
+    document.getElementById(systemName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</head>
+<body>
+
+    <h1>Are you healthy?</h1>
+    <p>Choose measurement system below:</p>
+
+    <div class="tab">
+        <button class="tablinks" onclick="selectSystem(event, 'Standard')">Standard</button>
+        <button class="tablinks" onclick="selectSystem(event, 'Metric')">Metric</button>
+    </div>
+
+    
+
+    <div id="Metric" class="tabcontent">
+        <h3>Metric</h3>
+        <h1>BMI Calculator</h1>
+        <h2>Enter your weight and height below:</h2>
+        <form action="/" method="POST">
+            <input type="text" name="pWeight" placeholder="Weight in Kilograms">
+            <input type="text" name="pHeight" placeholder="Height in Centimeters">
+            <button type="submit" name="button"> Calculate</button>
+        </form>
+    </div>
+
+    <div id="Standard" class="tabcontent">
+        <h3>Standard</h3>
+        
+        <h1>BMI Calculator</h1>
+        
+        <h2>Enter your weight and height below:</h2>
+        <form action="/standard" method="POST">
+            <input type="text" name="weightInLbs" placeholder="Weight in lbs">
+            <input type="text" name="heightInches" placeholder="Height in Inches">
+            <button type="submit" name="button"> Calculate</button>
+        </form>
+    </div>    
+    
+</body>
+</html>
